@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
+using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -19,6 +21,14 @@ public class PlayerMovement : MonoBehaviour
     bool isGrounded;
  
     // Update is called once per frame
+
+    public void Teleport(Vector3 position , Quaternion rotation)
+    {
+        transform.position = position;
+        Physics.SyncTransforms();
+        velocity = Vector3.zero;
+        
+    }
     void Update()
     {
         

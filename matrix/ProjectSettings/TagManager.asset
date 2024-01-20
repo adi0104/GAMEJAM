@@ -3,12 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - p1
+  - p2
+  - p3
+  - p4
+  - p5
+  - p6
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - portal
   - Water
   - UI
   - ground
