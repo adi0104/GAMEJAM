@@ -16,17 +16,32 @@ public class torchenabler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float moveCheck = anim.GetFloat("velocity");
-        if (moveCheck > 0.5)
+        if (!anim.GetBool("TorchOn") && Input.GetKeyDown(KeyCode.T))
         {
-            torchLight1.enabled = true;
-            torchLight2.enabled = true;
+            anim.SetBool("TorchOn", true);
+            TorchEnabled();
         }
-        else 
+        else if (anim.GetBool("TorchOn") && Input.GetKeyDown(KeyCode.T))
         {
+            anim.SetBool("TorchOn", false);
             torchLight1.enabled = false;
             torchLight2.enabled = false;
-
         }
+    }
+
+    void TorchEnabled()
+    {
+        //float moveCheck = anim.GetFloat("velocity");
+        //if (moveCheck > 0.5)
+        
+            torchLight1.enabled = true;
+            torchLight2.enabled = true;
+        
+        //else
+        //{
+           // torchLight1.enabled = false;
+            //torchLight2.enabled = false;
+
+        //}
     }
 }
