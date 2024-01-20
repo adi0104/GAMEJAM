@@ -63,15 +63,9 @@ public class PlayerMovement : MonoBehaviour
         forwardDirn.y= 0f;
         Quaternion targetRotation = Quaternion.LookRotation(forwardDirn);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotSpeed*Time.deltaTime);
+
     }
 }
 
+
  
-
-
-    //     // Check if there is any input (non-zero vector)
-    //     if (movement.magnitude >= 0.1f)
-    //     {
-            
-    //     }
-    // }
