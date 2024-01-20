@@ -57,7 +57,6 @@ public class PlayerMovement : MonoBehaviour
                                                                 jumpSpeed,
                                                                     GetComponent<Rigidbody>().velocity.z);*/
             rb.AddForce(Vector3.up*JumpForce, ForceMode.Impulse);
-
         }
         Vector3 forwardDirn = cam.transform.forward;
         forwardDirn.y= 0f;
@@ -65,13 +64,3 @@ public class PlayerMovement : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotSpeed*Time.deltaTime);
     }
 }
-
- 
-
-
-    //     // Check if there is any input (non-zero vector)
-    //     if (movement.magnitude >= 0.1f)
-    //     {
-            
-    //     }
-    // }
