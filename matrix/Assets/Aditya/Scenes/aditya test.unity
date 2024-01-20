@@ -6020,6 +6020,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1540679945152767976, guid: 3c85896c5451a014ab58e7dcf14ec612, type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2537838544807650506, guid: 3c85896c5451a014ab58e7dcf14ec612, type: 3}
       propertyPath: m_Name
       value: PauseCanvas
@@ -6108,6 +6112,14 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1063272465}
+    - target: {fileID: 9066385031543187068, guid: 3c85896c5451a014ab58e7dcf14ec612, type: 3}
+      propertyPath: m_isRightToLeft
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9066385031543187068, guid: 3c85896c5451a014ab58e7dcf14ec612, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
