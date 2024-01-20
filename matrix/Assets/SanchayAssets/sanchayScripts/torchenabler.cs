@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class torchenabler : MonoBehaviour
 {
-    public Light torchLight;
+    public Light torchLight1,torchLight2;
     public Animator anim;
     void Start()
     {
-        torchLight.enabled = false;
+        torchLight1.enabled = false;
+        torchLight2.enabled = false;
+
     }
 
     // Update is called once per frame
@@ -17,11 +19,14 @@ public class torchenabler : MonoBehaviour
         float moveCheck = anim.GetFloat("velocity");
         if (moveCheck > 0.5)
         {
-            torchLight.enabled = true;
+            torchLight1.enabled = true;
+            torchLight2.enabled = true;
         }
         else 
         {
-            torchLight.enabled = false;
+            torchLight1.enabled = false;
+            torchLight2.enabled = false;
+
         }
     }
 }
