@@ -7,7 +7,7 @@ public class main_menu : MonoBehaviour
 {
     public AudioMixer audioMixer;
     public GameObject mainmenu,settingmenu;
-    public static float initialSensitivity;
+    public static float initialSensitivity=300f;
     // Start is called before the first frame update 
     void Awake()
     {

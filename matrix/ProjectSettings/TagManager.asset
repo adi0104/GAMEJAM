@@ -10,6 +10,7 @@ TagManager:
   - p4
   - p5
   - p6
+  - door
   layers:
   - Default
   - TransparentFX
