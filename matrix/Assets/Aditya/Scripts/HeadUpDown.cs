@@ -26,7 +26,7 @@ public class HeadUpDown : MonoBehaviour
        xRotation = Mathf.Clamp(xRotation, xrot_lower_limit,xrot_upper_limit);
  
        //applying both rotations
-       transform.localRotation = Quaternion.Euler(xRotation, transform.localEulerAngles.y, transform.localEulerAngles.z);
+       transform.rotation = Quaternion.Euler(xRotation, transform.localEulerAngles.y, transform.localEulerAngles.z);
  
     }
 }

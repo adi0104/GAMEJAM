@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform cam;
     public float speed = 12f;
     public float JumpForce = 3f;
+    public float gravity=5f;
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
@@ -17,11 +18,18 @@ public class PlayerMovement : MonoBehaviour
     Vector3 velocity;
  
     bool isGrounded;
+
+    public void Teleport(Vector3 position)
+    {
+        transform.position = position;
+        Physics.SyncTransforms();
+        velocity = Vector3.zero;
+    }
  
     // Update is called once per frame
     void Update()
     {
-        
+
         anim.SetFloat("velocity", animSpeed);
         //checking if we hit the ground to reset our falling velocity, otherwise we will fall faster the next time
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
@@ -37,9 +45,14 @@ public class PlayerMovement : MonoBehaviour
             // Calculate movement vector in the rotated direction
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
 
+
             // Apply movement
             if (animSpeed <= 1f)
-            { animSpeed += Time.deltaTime * 2f; }
+            {
+                animSpeed += Time.deltaTime * 2f;
+            }
+
+            //rb.velocity = moveDir * speed ;
             
             transform.position += moveDir * speed * Time.deltaTime;
         }
@@ -59,6 +72,7 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(Vector3.up*JumpForce, ForceMode.Impulse);
 
         }
+        if(!isGrounded) rb.AddForce(-Vector3.up*gravity, ForceMode.Impulse);
         Vector3 forwardDirn = cam.transform.forward;
         forwardDirn.y= 0f;
         Quaternion targetRotation = Quaternion.LookRotation(forwardDirn);

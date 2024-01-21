@@ -4,19 +4,23 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - doors
-  - redDoor
-  - lockedDoor
+  - p1
+  - p2
+  - p3
+  - p4
+  - p5
+  - p6
+  - door
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - ground
+  - portal
   - Water
   - UI
-  - door
-  - 
-  - 
+  - ground
+  - wall
+  - ball
   - 
   - 
   - 
