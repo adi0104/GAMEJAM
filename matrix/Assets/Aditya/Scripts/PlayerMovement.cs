@@ -17,11 +17,18 @@ public class PlayerMovement : MonoBehaviour
     Vector3 velocity;
  
     bool isGrounded;
+
+    public void Teleport(Vector3 position)
+    {
+        transform.position = position;
+        Physics.SyncTransforms();
+        velocity = Vector3.zero;
+    }
  
     // Update is called once per frame
     void Update()
     {
-        
+
         anim.SetFloat("velocity", animSpeed);
         //checking if we hit the ground to reset our falling velocity, otherwise we will fall faster the next time
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);

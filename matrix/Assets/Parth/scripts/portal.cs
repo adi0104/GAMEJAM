@@ -16,7 +16,7 @@ public class portal : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            playermovement.Teleport(destination.position, destination.rotation);
+            playermovement.Teleport(destination.position);
         }
     }
 
