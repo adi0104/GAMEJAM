@@ -68,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
                                                                     GetComponent<Rigidbody>().velocity.z);*/
             rb.AddForce(Vector3.up*JumpForce, ForceMode.Impulse);
         }
+        if(!isGrounded) rb.AddForce(-Vector3.up*0.5f, ForceMode.Impulse);
         Vector3 forwardDirn = cam.transform.forward;
         forwardDirn.y= 0f;
         Quaternion targetRotation = Quaternion.LookRotation(forwardDirn);

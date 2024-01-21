@@ -2,10 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.Audio;
 public class main_menu : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public AudioMixer audioMixer;
+    public GameObject mainmenu,settingmenu;
+    public static float initialSensitivity;
+    // Start is called before the first frame update 
+    void Awake()
+    {
+        mainmenu.SetActive(true);
+        settingmenu.SetActive(false);
+    }
     void Start()
     {
         
@@ -24,9 +32,25 @@ public class main_menu : MonoBehaviour
 
     public void settings()
     {
-
+        settingmenu.SetActive(true);
+        mainmenu.SetActive(false);
     }
 
+    public void back()
+    {
+        settingmenu.SetActive(false);
+        mainmenu.SetActive(true);
+    }
+
+    public void changeVolume(float volume)
+    {
+        audioMixer.SetFloat("volume",volume);
+    }
+
+    public void changeSensitivity(float sensitivity)
+    {
+        initialSensitivity=sensitivity;
+    }
     public void quit()
     {
         Application.Quit();
