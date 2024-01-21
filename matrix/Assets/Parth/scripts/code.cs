@@ -8,6 +8,7 @@ public class code : MonoBehaviour
 {
     int code_num = 0;
     int final_code = 0;
+    public GameObject flashing;
 
     System.Random rand = new System.Random();
 
@@ -15,7 +16,7 @@ public class code : MonoBehaviour
     {
         for(int i = 0; i < 3; i++)
         {
-            final_code = 10 * final_code + rand.Next(1,6);
+            final_code = 10 * final_code + rand.Next(1,4);
         }
 
         Debug.Log(final_code);
@@ -23,7 +24,7 @@ public class code : MonoBehaviour
 
     private void Update()
     {
-        if(code_num == final_code)
+        if(code_num % 1000 == final_code)
         {
             Debug.Log("FINISH");
         }
@@ -37,13 +38,23 @@ public class code : MonoBehaviour
             {
                 code_num = 10 * code_num + multiplier;
             }
+            StartCoroutine(waitTime());
 
             Debug.Log(code_num);
         }
 
-        if (code_num > 666)
+        if (code_num > 444)
         {
             code_num = code_num % 100;
         }
+    }
+
+    private IEnumerator waitTime()
+    {
+        gameObject.GetComponent<PlayerMovement>().enabled = false;
+        flashing.SetActive(true);
+        yield return new WaitForSeconds(2.0f);
+        gameObject.GetComponent<PlayerMovement>().enabled = true;
+        flashing.SetActive(false);
     }
 }

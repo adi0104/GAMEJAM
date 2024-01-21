@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Animations;
-using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -20,19 +18,18 @@ public class PlayerMovement : MonoBehaviour
     Vector3 velocity;
  
     bool isGrounded;
- 
-    // Update is called once per frame
 
-    public void Teleport(Vector3 position , Quaternion rotation)
+    public void Teleport(Vector3 position)
     {
         transform.position = position;
         Physics.SyncTransforms();
         velocity = Vector3.zero;
-        
     }
+ 
+    // Update is called once per frame
     void Update()
     {
-        
+
         anim.SetFloat("velocity", animSpeed);
         //checking if we hit the ground to reset our falling velocity, otherwise we will fall faster the next time
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
@@ -68,11 +65,16 @@ public class PlayerMovement : MonoBehaviour
                                                                 jumpSpeed,
                                                                     GetComponent<Rigidbody>().velocity.z);*/
             rb.AddForce(Vector3.up*JumpForce, ForceMode.Impulse);
+
         }
         if(!isGrounded) rb.AddForce(-Vector3.up*gravity, ForceMode.Impulse);
         Vector3 forwardDirn = cam.transform.forward;
         forwardDirn.y= 0f;
         Quaternion targetRotation = Quaternion.LookRotation(forwardDirn);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotSpeed*Time.deltaTime);
+
     }
 }
+
+
+ 
