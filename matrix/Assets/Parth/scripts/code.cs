@@ -40,6 +40,19 @@ public class code : MonoBehaviour
         }
     }
 
+        // if (code_num > 444)
+        // {
+        //     code_num = code_num % 100;
+        // }
+    // private IEnumerator waitTime()
+    // {
+    //     gameObject.GetComponent<PlayerMovement>().enabled = false;
+    //     flashing.SetActive(true);
+    //     yield return new WaitForSeconds(2.0f);
+    //     gameObject.GetComponent<PlayerMovement>().enabled = true;
+    //     flashing.SetActive(false);
+    // }
+
     private IEnumerator waitTime()
     {
         gameObject.GetComponent<PlayerMovement>().enabled = false;
