@@ -32,6 +32,7 @@ public class Zombie_AI : MonoBehaviour
         if(Physics.Raycast(ray, out RaycastHit hit, interactionRange))
         {
             // Check if the hit object is a door
+            Rotate(player.position);
             if(hit.collider.CompareTag("door"))
             {
                 // Perform actions related to the door

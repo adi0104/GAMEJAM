@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class code : MonoBehaviour
@@ -9,12 +10,9 @@ public class code : MonoBehaviour
     int code_num = 0;
     int final_code = 0;
     public GameObject flashing;
-
-
     private void Awake()
     {
         final_code = 100 * spawner.yellow + 10 * spawner.green + spawner.blue;
-        Debug.Log(final_code);
     }
 
     private void Update()
@@ -26,7 +24,7 @@ public class code : MonoBehaviour
         Debug.Log(code_num);
         if (code_num == final_code)
         {
-            Debug.Log("FINISH");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
     private void OnTriggerEnter(Collider collider)
@@ -39,8 +37,6 @@ public class code : MonoBehaviour
                 code_num = 10 * code_num + multiplier;
             }
             StartCoroutine(waitTime());
-
-            Debug.Log(code_num);
         }
     }
 
@@ -48,7 +44,7 @@ public class code : MonoBehaviour
     {
         gameObject.GetComponent<PlayerMovement>().enabled = false;
         flashing.SetActive(true);
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(0.5f);
         gameObject.GetComponent<PlayerMovement>().enabled = true;
         flashing.SetActive(false);
     }

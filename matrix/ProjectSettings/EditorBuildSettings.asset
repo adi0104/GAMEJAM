@@ -9,6 +9,18 @@ EditorBuildSettings:
     path: Assets/Aditya/Scenes/main menu.unity
     guid: ea64657ee802bfa4c8c08ceb8cb5a617
   - enabled: 1
+    path: Assets/SanchayAssets/scenes/FINAL.unity
+    guid: 005b4ee2bbd15bc41abec6d68656f917
+  - enabled: 1
+    path: Assets/SanchayAssets/scenes/testscene1.unity
+    guid: 096eafe36d2d65b45958544cbd1b1590
+  - enabled: 1
+    path: Assets/SanchayAssets/scenes/AlleyWayScene.unity
+    guid: a9b436baa99fd27428a343b5cb9dab1c
+  - enabled: 1
+    path: Assets/Parth/Scenes/death.unity
+    guid: 8ae534643cfe52e46a40a39fbe54d311
+  - enabled: 0
     path: Assets/Aditya/Scenes/aditya test.unity
     guid: 5bf12e3fd1a7f6d4fa76463e05df8022
   m_configObjects: {}
