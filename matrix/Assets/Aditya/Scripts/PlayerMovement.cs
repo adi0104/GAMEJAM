@@ -51,8 +51,10 @@ public class PlayerMovement : MonoBehaviour
             {
                 animSpeed += Time.deltaTime * 2f;
             }
+
+            rb.velocity = moveDir * speed ;
             
-            transform.position += moveDir * speed * Time.deltaTime;
+            //transform.position += moveDir * speed * Time.deltaTime;
         }
         else
         {   
