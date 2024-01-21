@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
-    public static bool alive=true;
     public static int currentHealth;
     public int maxHealth=10;
     public float regenerationTime=30f;
@@ -13,7 +12,6 @@ public class Health : MonoBehaviour
     void Awake()
     {
         currentHealth=maxHealth;
-        alive=true;
     }
     // Start is called before the first frame update
     void Start()
@@ -36,7 +34,7 @@ public class Health : MonoBehaviour
         }
         if(currentHealth<=0) 
         {
-            //alive=false;
+            Cursor.lockState = CursorLockMode.None;
             SceneManager.LoadScene(5);
         }
     }
