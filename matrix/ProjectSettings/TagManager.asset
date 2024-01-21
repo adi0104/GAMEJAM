@@ -4,9 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - wall1
-  - wall2
-  - wall3
+  - p1
+  - p2
+  - p3
+  - p4
+  - p5
+  - p6
+  - door
   layers:
   - Default
   - TransparentFX

@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform cam;
     public float speed = 12f;
     public float JumpForce = 3f;
+    public float gravity=5f;
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
@@ -69,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(Vector3.up*JumpForce, ForceMode.Impulse);
 
         }
+        if(!isGrounded) rb.AddForce(-Vector3.up*gravity, ForceMode.Impulse);
         Vector3 forwardDirn = cam.transform.forward;
         forwardDirn.y= 0f;
         Quaternion targetRotation = Quaternion.LookRotation(forwardDirn);
