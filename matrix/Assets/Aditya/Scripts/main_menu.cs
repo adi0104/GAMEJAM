@@ -27,7 +27,7 @@ public class main_menu : MonoBehaviour
 
     public void play()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        SceneManager.LoadScene(1);
     }
 
     public void settings()
@@ -50,6 +50,10 @@ public class main_menu : MonoBehaviour
     public void changeSensitivity(float sensitivity)
     {
         initialSensitivity=sensitivity;
+    }
+
+    public void home(){
+        SceneManager.LoadScene(0);
     }
     public void quit()
     {

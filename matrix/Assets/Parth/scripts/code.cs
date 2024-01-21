@@ -19,7 +19,12 @@ public class code : MonoBehaviour
 
     private void Update()
     {
-        if(code_num % 1000 == final_code)
+        if (code_num > 444)
+        {
+            code_num = code_num % 1000;
+        }
+        Debug.Log(code_num);
+        if (code_num == final_code)
         {
             Debug.Log("FINISH");
         }
@@ -36,11 +41,6 @@ public class code : MonoBehaviour
             StartCoroutine(waitTime());
 
             Debug.Log(code_num);
-        }
-
-        if (code_num > 444)
-        {
-            code_num = code_num % 100;
         }
     }
 

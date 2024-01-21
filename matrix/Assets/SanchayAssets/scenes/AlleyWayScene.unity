@@ -2002,6 +2002,7 @@ MonoBehaviour:
   - {fileID: 6474784979288811099, guid: 2902a03560125a44ca852eecd491310c, type: 3}
   - {fileID: 518912624234057197, guid: fbf3cb7340cffc14fb7409ac7ee3882c, type: 3}
   - {fileID: 5140323764728944135, guid: a81c6fbabb72cf544b393d763fa068f2, type: 3}
+  forceMagnitude: 5
 --- !u!1 &1234037425
 GameObject:
   m_ObjectHideFlags: 0
@@ -2499,7 +2500,11 @@ PrefabInstance:
       objectReference: {fileID: 1826875365}
     - target: {fileID: 5657877814301154123, guid: de20cfec88d49484d980ea1199e53b56, type: 3}
       propertyPath: speed
-      value: 30
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5657877814301154123, guid: de20cfec88d49484d980ea1199e53b56, type: 3}
+      propertyPath: footstepAudio
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8870576019039182203, guid: de20cfec88d49484d980ea1199e53b56, type: 3}
       propertyPath: m_LocalScale.x
