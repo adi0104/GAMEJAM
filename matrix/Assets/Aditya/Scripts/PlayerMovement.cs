@@ -44,9 +44,12 @@ public class PlayerMovement : MonoBehaviour
             // Calculate movement vector in the rotated direction
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
 
+
             // Apply movement
             if (animSpeed <= 1f)
-            { animSpeed += Time.deltaTime * 2f; }
+            {
+                animSpeed += Time.deltaTime * 2f;
+            }
             
             transform.position += moveDir * speed * Time.deltaTime;
         }

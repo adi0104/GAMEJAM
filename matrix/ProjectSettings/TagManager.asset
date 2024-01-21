@@ -4,12 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - p1
-  - p2
-  - p3
-  - p4
-  - p5
-  - p6
+  - wall1
+  - wall2
+  - wall3
   layers:
   - Default
   - TransparentFX
@@ -18,8 +15,8 @@ TagManager:
   - Water
   - UI
   - ground
-  - 
-  - 
+  - wall
+  - ball
   - 
   - 
   - 

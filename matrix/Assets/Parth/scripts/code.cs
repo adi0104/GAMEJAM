@@ -10,21 +10,21 @@ public class code : MonoBehaviour
     int final_code = 0;
     public GameObject flashing;
 
-    System.Random rand = new System.Random();
 
     private void Awake()
     {
-        for(int i = 0; i < 3; i++)
-        {
-            final_code = 10 * final_code + rand.Next(1,4);
-        }
-
+        final_code = 100 * spawner.yellow + 10 * spawner.green + spawner.blue;
         Debug.Log(final_code);
     }
 
     private void Update()
     {
-        if(code_num % 1000 == final_code)
+        if (code_num > 444)
+        {
+            code_num = code_num % 1000;
+        }
+        Debug.Log(code_num);
+        if (code_num == final_code)
         {
             Debug.Log("FINISH");
         }
@@ -42,12 +42,20 @@ public class code : MonoBehaviour
 
             Debug.Log(code_num);
         }
-
-        if (code_num > 444)
-        {
-            code_num = code_num % 100;
-        }
     }
+
+        // if (code_num > 444)
+        // {
+        //     code_num = code_num % 100;
+        // }
+    // private IEnumerator waitTime()
+    // {
+    //     gameObject.GetComponent<PlayerMovement>().enabled = false;
+    //     flashing.SetActive(true);
+    //     yield return new WaitForSeconds(2.0f);
+    //     gameObject.GetComponent<PlayerMovement>().enabled = true;
+    //     flashing.SetActive(false);
+    // }
 
     private IEnumerator waitTime()
     {
