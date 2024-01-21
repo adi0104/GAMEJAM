@@ -55,7 +55,6 @@ public class main_menu : MonoBehaviour
     public void home(){
         SceneManager.LoadScene(0);
     }
-
     public void quit()
     {
         Application.Quit();
