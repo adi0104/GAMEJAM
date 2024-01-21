@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/SanchayAssets/scenes/AlleyWayScene.unity
     guid: a9b436baa99fd27428a343b5cb9dab1c
   - enabled: 1
+    path: Assets/Aditya/Scenes/win.unity
+    guid: a382a939fa60bfe439590af639d33de9
+  - enabled: 1
     path: Assets/Parth/Scenes/death.unity
     guid: 8ae534643cfe52e46a40a39fbe54d311
   - enabled: 0

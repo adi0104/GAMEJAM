@@ -36,7 +36,7 @@ public class Health : MonoBehaviour
         }
         if(currentHealth<=0) 
         {
-            alive=false;
+            //alive=false;
             SceneManager.LoadScene(5);
         }
     }

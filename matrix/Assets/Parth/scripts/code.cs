@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
+//using UnityEngine.UIElements;
 
 public class code : MonoBehaviour
 {
@@ -24,6 +24,7 @@ public class code : MonoBehaviour
         Debug.Log(code_num);
         if (code_num == final_code)
         {
+            Cursor.lockState = CursorLockMode.None;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
