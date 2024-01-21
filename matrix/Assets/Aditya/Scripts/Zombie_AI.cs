@@ -14,6 +14,8 @@ public class Zombie_AI : MonoBehaviour
     public Transform head;
     public float resetDistance=5f;
     bool isResetting=false;
+    public float attackTime=1f;
+    float attackDuration=0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,12 +32,12 @@ public class Zombie_AI : MonoBehaviour
         if(Physics.Raycast(ray, out RaycastHit hit, interactionRange))
         {
             // Check if the hit object is a door
-            //if (hit.collider.CompareTag("door"))
-            //{
+            if(hit.collider.CompareTag("door"))
+            {
                 // Perform actions related to the door
-                Debug.Log("door");
+                //Debug.Log("door");
                 ResetPosition();
-            //}
+            }
         }
         else if(!isResetting)
         {
@@ -75,13 +77,20 @@ public class Zombie_AI : MonoBehaviour
 
     void Attack()
     {
-        Debug.Log("Attack");
+        //Debug.Log("Attack");
+        attackDuration+=Time.deltaTime;
+        if(attackDuration>=attackTime)
+        {
+            Health.currentHealth--;
+            Debug.Log(Health.currentHealth);
+            attackDuration=0f;
+        }
     }
 
     void ResetPosition()
     {
         isResetting=true;
         anim.SetBool("isRunning",true);
-        Debug.Log("reset");
+        //Debug.Log("reset");
     }
 }
