@@ -6,7 +6,7 @@ public class dialogue : MonoBehaviour
 {
     public TMP_Text textBox;
     public string[] sentences;
-    public int size=5;
+    public int size;
     int currentIndex=0;
 
     // Start is called before the first frame update
@@ -21,9 +21,10 @@ public class dialogue : MonoBehaviour
         if(currentIndex<size) Time.timeScale=0;
         if(Input.GetKeyDown(KeyCode.E) && currentIndex<size)
         {
-            textBox.text=sentences[currentIndex++];
+            textBox.text=sentences[currentIndex++]+"\nPress E to continue";
             if(currentIndex==size) 
             {
+                textBox.enabled=false;
                 textBox.text="";
                 Time.timeScale=1;
             }

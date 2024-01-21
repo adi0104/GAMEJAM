@@ -54,6 +54,7 @@ public class pause : MonoBehaviour
         pausemenu.SetActive(false);
         isPaused=false;
         Cursor.lockState = CursorLockMode.Locked;
+        Debug.Log("resume");
     }
 
     public void settings()
